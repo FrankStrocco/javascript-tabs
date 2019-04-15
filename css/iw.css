@@ -106,3 +106,27 @@ img {
     display: block;
 
 }
+
+
+/* --------- iw02 styling ------------- */
+
+.cart .info {
+    margin-bottom: .4em;
+}
+.cart .group {
+    margin-bottom: .5em;
+}
+.cart #results {
+    font-size: 93%;
+    color: #777;
+    min-width: 20em;
+    padding: 1em 15.5em;
+    font-style: italic;
+}
+label {
+    color: #333;
+}
+input:focus, select:focus {
+    outline-color: #d3e203;
+    background-color: lemonchiffon;
+}
