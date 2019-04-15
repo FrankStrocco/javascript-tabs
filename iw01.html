@@ -18,12 +18,12 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum a, hic fugit dolorem iure, voluptas provident asperiores possimus aperiam. At error vitae quaerat aperiam iure inventore aspernatur nisi earum esse?</p>
             <h2>Here are some of our favorite summer blends</h2>
             <section id="tab-group" >
-                <h3 class="tab-header active" id="tab-header-1">bluberry+lavender</h3>
+                <h3 class="tab-header active" id="tab-header-1">blueberry+lavender</h3>
                 <article class="tab-content active" id="tab-content-1">
                     <img src="images/blueBerryLav.jpg" alt="">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio pariatur impedit sapiente eos nisi cumque at saepe dolor expedita ad, fugit nulla iure explicabo similique id quae culpa ea. Libero!</p>
                 </article>
-                <h3 class="tab-header" id="tab-header-2">waterMellon+Mint</h3>
+                <h3 class="tab-header" id="tab-header-2">waterMelon+Mint</h3>
                 <article class="tab-content" id="tab-content-2">
                     <img src="images/watermelonMint.jpg" alt="">
                     <p>Fuga non aspernatur, eius nihil distinctio dolor aliquam incidunt, impedit hic eligendi provident rerum vitae et illum. Vero fugiat, aut aliquam quidem voluptates quas reiciendis minus. Ex nam labore aut.</p>
@@ -36,7 +36,8 @@
             </section>
         </main>
 
-        <script type="text/javascript">
+        <script>
+
             document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('tab-group').className = 'ready';
 
@@ -49,8 +50,27 @@
                     if (myHeader.className != tabSelect) return;
 
                     var myID = myHeader.id,
-                        contentId = myId.replace('header', 'content');
+                        contentID = myID.replace('header', 'content');
+
+                    deactivateAllTabs();
+
+                    myHeader.className = tabSelect + ' active';
+                    document.getElementById(contentID).className = tabContent + ' active';
+                    // remove the active class from everything
+
+
                 }) // end event on tab-group
+
+                function deactivateAllTabs() {
+                    var tabHeaders = document.getElementsByClassName(tabSelect),
+                        tabContents = document.getElementsByClassName(tabContent);
+
+                    for (var i = 0; i < tabHeaders.length; i++) {
+                        tabHeaders[i].className = tabSelect;
+                        tabContents[i].className = tabContent;
+                    }
+                } // end deactivateAllTabs
+
 
             }) // end event on DOM content
         </script>
